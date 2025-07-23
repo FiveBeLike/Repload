@@ -56,3 +56,4 @@ app.post('/register', async (req, res) => res.json(await db.register(req.body.lo
 app.post('/login', async (req, res) => res.json(await db.auth(req.body.login, req.body.password)));
 app.listen(process.env.PORT || 3000, ()=> console.log('Repload backend listening'));
 server.listen(+(process.env.WS_PORT || process.env.PORT || 3000)+1);
+ 

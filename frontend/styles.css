@@ -5,3 +5,4 @@ body{display:flex;margin:0;font-family:sans-serif;height:100vh}
 .msg{margin:5px;padding:5px;border:1px solid #ccc;position:relative}
 .msg.self{background:#ddf}
 .msg button{position:absolute;right:5px;top:5px;font-size:.8em}
+ 

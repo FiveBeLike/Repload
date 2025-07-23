@@ -50,3 +50,4 @@ module.exports = {
     db.all(`SELECT * FROM channels`, [], (e,rows)=> res(rows));
   })
 };
+ 

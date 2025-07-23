@@ -89,3 +89,4 @@ function applyCh(){
   const desc=document.getElementById('ch_desc').value;
   ws.send(JSON.stringify({type:'updateChannel', chId:curChannel, name,nick,avatar,description:desc}));
 }
+ 
