@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Repload</title><link rel="stylesheet" href="style.css"/></head><body>
+<div id="login"><input id="loginIn" placeholder="Логин"/><input id="pwdIn" type="password" placeholder="Пароль"/><button onclick="doReg()">Регистрация</button><button onclick="doLogin()">Войти</button></div>
+<div id="main" style="display:none">
+  <div id="sidebar">
+    <h3>Каналы</h3>
+    <ul id="channels"></ul>
+    <button onclick="createCh()">+ Канал</button>
+    <div>
+      <h4>Настройки канала</h4>
+      <input id="ch_name" placeholder="Имя"/><input id="ch_nick" placeholder="Адрес"/>
+      <input id="ch_avatar" placeholder="URL аватара"/><input id="ch_desc" placeholder="Описание"/>
+      <button onclick="applyCh()">Сохранить</button>
+    </div>
+  </div>
+  <div id="chat">
+    <div id="messages"></div>
+    <input id="msgIn" placeholder="Сообщение"/>
+    <button onclick="sendMsg()">→</button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="app.js"></script>
+</body></html>
