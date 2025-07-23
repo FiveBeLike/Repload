@@ -1,18 +1,19 @@
+const API_BASE = 'https://repload-backend.onrender.com';
 let ws, login;
 let curChannel = null;
 
 async function doReg(){
-  const res = await fetch('https://YOUR_BACKEND/register',{method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({login:LI().log,pwd:LI().pwd})});
+  const res = await fetch(`${API_BASE}/register`,{method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({login:LI().log,pwd:LI().pwd})});
   alert((await res.json()).success?'OK':'ERR');
 }
 
 async function doLogin(){
   login = LI().log;
-  const res = await fetch('https://YOUR_BACKEND/login',{method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({login, password:LI().pwd})});
+  const res = await fetch(`${API_BASE}/login`,{method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({login, password:LI().pwd})});
   if (!(await res.json()).success) return alert('ERR');
   document.getElementById('login').style.display='none';
   document.getElementById('main').style.display='flex';
-  ws = new WebSocket('wss://YOUR_BACKEND_WS');
+  ws = new WebSocket('wss://repload-backend.onrender.com');
   ws.onopen = ()=> ws.send(JSON.stringify({type:'login', login}));
   ws.onmessage = msg=>{
     const d = JSON.parse(msg.data);
